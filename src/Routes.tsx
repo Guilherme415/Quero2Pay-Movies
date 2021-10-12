@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "pages/Home";
+import MoviePage from "pages/MoviePage";
 
 const Routes = () => {
     return (
@@ -9,7 +10,8 @@ const Routes = () => {
                     <Home />
                 </Route>
 
-                <Route path="/dashboard">
+                <Route path={`/movies/{id}`}>
+                    <MoviePage />
                 </Route>
             </Switch>
         </BrowserRouter>

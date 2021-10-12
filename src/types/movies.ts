@@ -22,3 +22,7 @@ export type MoviePage = {
     total_page: number;
     total_result: number;
 }
+
+export type SearchValue = {
+    searchValue: string;
+}
