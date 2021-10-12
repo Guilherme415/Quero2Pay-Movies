@@ -1,27 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 :root {
-    --color-primary: #F6F6F6;
-    --color-bg: #212121;
+    --color-primary: #ffffff;
+    --color-bg: #141414;
 }
 
 html, body {
     height: 100%;
     font-family: "Ubuntu", sans-serif;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.content {
-    flex: 1 0 auto;
-}
-
-.footer {
-    flex-shrink: 0;
-    text-align: center;
 }
 
 .bg-primary {
@@ -30,4 +15,9 @@ html, body {
 
 .text-primary {
     color: var(--color-primary) !important;
+}
+
+.movie-app > .row{
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }
