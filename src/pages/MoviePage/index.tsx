@@ -1,10 +1,14 @@
-import NavBar from "components/NavBar";
-import { Link } from "react-router-dom";
+import MovieComponent from "components/Movie";
+
+type MovieId = {
+  id: number;
+}
 
 const MoviePage = () => {
+
   return (
     <>
-      
+      {/* <MovieComponent id={id}/> */}
     </>
   );
 };

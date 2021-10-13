@@ -1,11 +1,11 @@
 import Carousel from "components/Carousel";
-import NavBar from "components/NavBar";
-import { Link } from "react-router-dom";
+import MoviePerCategory from "components/MoviePerCategory";
 
 const Home = () => {
   return (
     <>
       <Carousel />
+      <MoviePerCategory />
     </>
   );
 };

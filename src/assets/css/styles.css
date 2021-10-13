@@ -21,3 +21,13 @@ html, body {
     overflow-x: auto;
     flex-wrap: nowrap;
 }
+
+.image-container {
+    position: relative;
+    transition: 0.2;
+}
+
+.image-container :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

@@ -26,3 +26,16 @@ export type MoviePage = {
 export type SearchValue = {
     searchValue: string;
 }
+
+export type Genres = {
+    results?: Genre[];
+}
+
+export type Genre = {
+    genres: [
+        {
+            id: number;
+            name: string;
+        },
+    ]
+}

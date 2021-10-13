@@ -1,5 +1,4 @@
 import { SearchValue } from "types/movies";
-import { isPropertySignature } from "typescript";
 
 type Props = {
   search: SearchValue;
