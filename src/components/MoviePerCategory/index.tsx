@@ -1,13 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Genre, Genres, MoviePage } from "types/movies";
+import { Genre, MoviePage } from "types/movies";
 import { BASE_URL, IMG_URL, GET_GENRES } from "utils/requests";
 
 
 const MoviePerCategory = () => {
 
-    const [activePage, setActivePage] = useState(1);
     const [page, setPage] = useState<MoviePage>({ 
         page: 1,
         dates: "",
@@ -17,11 +16,11 @@ const MoviePerCategory = () => {
     const [genre, setGenre] = useState<Genre>();
     
     useEffect(() => {
-        axios.get(`${BASE_URL}&page=${activePage}`)
+        axios.get(`${BASE_URL}`)
         .then((response) => {
             setPage(response.data);
         });
-    }, [activePage]);
+    });
 
     useEffect(() => {
         axios.get(GET_GENRES)
@@ -30,8 +29,6 @@ const MoviePerCategory = () => {
             setGenre(data);
         });
     }, [])
-    // console.log(page.results)
-    // console.log('Type: ' , typeof(page.results))
 
     console.log(genre?.genres)
     console.log('Type: ' , typeof(genre?.genres))
@@ -59,16 +56,17 @@ const MoviePerCategory = () => {
                                                     <img src={`${IMG_URL}${movie.poster_path}`} alt="" />
                                                 </div>
                                             </Link>
+                                            {/* <h4 className="text-primary">{movie.title}</h4>
+                                            <h5>Release date:</h5>
+                                            <h4>{movie.release_date}</h4> */}
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div> 
-                    <br />
-                    <br />
                 </div>  
-                ))}
+            ))}
         </div>
       </>
     );
