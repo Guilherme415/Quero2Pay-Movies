@@ -19,7 +19,7 @@ export type MoviePage = {
     results?: Movie[];
     dates: string;
     page: number;
-    total_page: number;
+    total_pages: number;
     total_result: number;
 }
 

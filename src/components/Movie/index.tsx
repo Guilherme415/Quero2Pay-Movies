@@ -12,7 +12,7 @@ const MovieComponent = ({ id }: props) => {
   const [page, setPage] = useState<MoviePage>({
     page: 1,
     dates: "",
-    total_page: 0,
+    total_pages: 0,
     total_result: 0,
   });
   const [genre, setGenre] = useState<Genre>();
@@ -30,25 +30,20 @@ const MovieComponent = ({ id }: props) => {
     });
   }, []);
 
-  useEffect(() => {
-    axios.get(GET_GENRES).then((response) => {
-      const data = response.data as Genre;
-      setGenre(data);
-    });
-  }, []);
+  console.log(page)
 
   return (
     <>
-      <div className="container mt-4 mb-4">
+      <div className="container mt-5 mb-5">
         {page.results
           ?.filter((item) => item.id === id)
           .map((item) => (
             <div key={item.id} className="d-flex flex-wrap">
-              <div className="flex-column justify-content-start">
+              <div className="flex-column justify-content-start flex-wrap w-25">
                 <div>
                   <img src={`${IMG_URL}${item.poster_path}`} alt="" />
                 </div>
-                <div>
+                <div className="flex-wrap">
                   <br />
                   <h6 className="text-secundary">TÍTULO ORIGINAL</h6>
                   <h4>{item.title}</h4>

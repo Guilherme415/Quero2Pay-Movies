@@ -1,6 +1,7 @@
 import axios from "axios";
 import NavBar from "components/NavBar";
-import Pagination from "components/Pagination";
+import BackPage from "components/Pagination/backPage";
+import NextPage from "components/Pagination/nextPage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MoviePage, SearchValue } from "types/movies";
@@ -14,7 +15,7 @@ const Carousel = () => {
   const [page, setPage] = useState<MoviePage>({
     page: 1,
     dates: "",
-    total_page: 0,
+    total_pages: 0,
     total_result: 0,
   });
 
@@ -54,13 +55,16 @@ const Carousel = () => {
       <NavBar search={searchValue} onSearchChange={changeSearch} />
       <div className="bg-primary text-primary container-fluid movie-app mh-25">
         <div className="row mw-25 mh-25">
-          <div className="d-flex">
+          <div className="d-flex mt-3">
+            <div className="mt-auto mb-auto">
+              <BackPage page={page} onPageChange={changePage} />
+            </div>
             {page.results
               ?.filter((movie) => movie.poster_path != null)
               .map((movie) => (
                 <div
                   key={movie.id}
-                  className="d-flex justify-content-start m-3"
+                  className="m-3"
                 >
                   <div className="flex-column">
                     <Link to={`/movies/${movie.id}`}>
@@ -69,14 +73,16 @@ const Carousel = () => {
                       </div>
                       <h4 className="text-primary">{movie.title}</h4>
                     </Link>
-                    <h5>Release date:</h5>
+                    <h5 className="text-secundary">Release date:</h5>
                     <h4>{movie.release_date}</h4>
                   </div>
                 </div>
               ))}
+            <div className="mt-auto mb-auto">
+              <NextPage page={page} onPageChange={changePage} />
+            </div>
           </div>
         </div>
-        <Pagination page={page} onPageChange={changePage} />
       </div>
     </>
   );
