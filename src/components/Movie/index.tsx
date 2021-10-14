@@ -39,11 +39,11 @@ const MovieComponent = ({ id }: props) => {
           ?.filter((item) => item.id === id)
           .map((item) => (
             <div key={item.id} className="d-flex flex-wrap">
-              <div className="flex-column justify-content-start flex-wrap w-25">
+              <div className="flex-column justify-content-start flex-wrap w-30">
                 <div>
                   <img src={`${IMG_URL}${item.poster_path}`} alt="" />
                 </div>
-                <div className="flex-wrap">
+                <div>
                   <br />
                   <h6 className="text-secundary">TÍTULO ORIGINAL</h6>
                   <h4>{item.title}</h4>
