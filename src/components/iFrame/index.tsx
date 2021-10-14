@@ -24,7 +24,7 @@ const IFrame = ({ id }: props) => {
       <div>
         <iframe
           width="100%"
-          height="500vm"
+          height="399px"
           src={`https://www.youtube.com/embed/${movie?.results?.[0].key}`}
           title={`${movie?.results?.[0].name}`}
           frameBorder="0"

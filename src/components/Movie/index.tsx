@@ -39,12 +39,12 @@ const MovieComponent = ({ id }: props) => {
 
   return (
     <>
-      <div className="container container-movies">
+      <div className="container mt-4 mb-4">
         {page.results
           ?.filter((item) => item.id === id)
           .map((item) => (
-            <div key={item.id} className="d-flex justify-content-left">
-              <div className="flex-column">
+            <div key={item.id} className="d-flex flex-wrap">
+              <div className="flex-column justify-content-start">
                 <div>
                   <img src={`${IMG_URL}${item.poster_path}`} alt="" />
                 </div>

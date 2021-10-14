@@ -13,7 +13,7 @@ const MoviePage = () => {
   return (
     <>
     <div className="bg-primary text-primary">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <Link to="/" className="text-primary">
             QueroMovies

@@ -30,14 +30,9 @@ html, body {
 .separador{
     margin-top: -2px;
     margin-bottom: 5px;
-    width: 50vw;
+    width: 50%;
     height: 1px;
     background-color: #363636;
-}
-
-.filme-direita {
-    margin-left: 10px;
-    padding: 10px;
 }
 
 .movie-app > .row{
@@ -55,6 +50,7 @@ html, body {
     transform: scale(1.1);
 }
 
-.container-movies{
-    padding: 5vw;
+.filme-direita{
+    margin-left: 10px;
+    width: 70%;
 }
