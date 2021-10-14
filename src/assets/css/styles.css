@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 :root {
     --color-primary: #ffffff;
+    --color-secundary: #959595;
     --color-bg: #141414;
 }
 
@@ -17,6 +18,28 @@ html, body {
     color: var(--color-primary) !important;
 }
 
+.text-secundary {
+    color: var(--color-secundary) !important;
+}
+
+.footer {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.separador{
+    margin-top: -2px;
+    margin-bottom: 5px;
+    width: 50vw;
+    height: 1px;
+    background-color: #363636;
+}
+
+.filme-direita {
+    margin-left: 10px;
+    padding: 10px;
+}
+
 .movie-app > .row{
     overflow-x: auto;
     flex-wrap: nowrap;
@@ -30,4 +53,8 @@ html, body {
 .image-container :hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.container-movies{
+    padding: 5vw;
 }

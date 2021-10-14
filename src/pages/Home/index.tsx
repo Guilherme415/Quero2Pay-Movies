@@ -1,4 +1,5 @@
 import Carousel from "components/Carousel";
+import Footer from "components/Footer";
 import MoviePerCategory from "components/MoviePerCategory";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <>
       <Carousel />
       <MoviePerCategory />
+      <Footer />
     </>
   );
 };
