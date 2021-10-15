@@ -4,7 +4,7 @@ import BackPage from "components/Pagination/backPage";
 import NextPage from "components/Pagination/nextPage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { MoviePage, SearchValue } from "types/movies";
+import { formatDate, MoviePage, SearchValue } from "types/movies";
 import { BASE_URL, IMG_URL, SEARCH_URL } from "utils/requests";
 
 const Carousel = () => {
@@ -59,14 +59,14 @@ const Carousel = () => {
                   className="m-3"
                 >
                   <div className="flex-column">
-                    <Link to={`/movies/${page.page}/${movie.id}`}>
+                    <Link to={`/movies/${movie.id}`}>
                       <div className="image-container">
                         <img src={`${IMG_URL}${movie.poster_path}`} alt="" />
                       </div>
                       <h4 className="text-primary">{movie.title}</h4>
                     </Link>
                     <h5 className="text-secundary">Data de lançamento:</h5>
-                    <h4>{movie.release_date}</h4>
+                    <h4>{formatDate(movie.release_date)}</h4>
                   </div>
                 </div>
               ))}

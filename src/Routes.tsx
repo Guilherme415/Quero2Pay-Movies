@@ -10,7 +10,7 @@ const Routes = () => {
                     <Home />
                 </Route>
 
-                <Route path="/movies/:page/:id">
+                <Route path="/movies/:id">
                     <MoviePage />
                 </Route>
             </Switch>

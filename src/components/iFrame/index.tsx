@@ -4,7 +4,7 @@ import { Video } from "types/movies";
 
 type props = {
   id: number;
-  language: string;
+  language?: string;
 };
 
 const IFrame = ({ id, language }: props) => {
