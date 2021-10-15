@@ -6,8 +6,6 @@ type Props = {
 }
 
 const NextPage = ({ page, onPageChange }: Props) => {
-
-    console.log(page.total_pages)
   return (
     <div className="d-flex justify-content-center">
       <nav>

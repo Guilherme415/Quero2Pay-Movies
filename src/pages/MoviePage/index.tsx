@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 
 type params = {
   id: string;
+  page: string;
 };
 
 const MoviePage = () => {
-  const { id } = useParams<params>();
+  const { id, page } = useParams<params>();
 
   return (
     <>
@@ -20,7 +21,7 @@ const MoviePage = () => {
           </Link>
         </div>
       </nav>
-      <MovieComponent id={id ? Number.parseInt(id) : 0} />
+      <MovieComponent id={id ? Number.parseInt(id) : 0} activePage={page ? Number.parseInt(page) : 0} />
       <Footer />
     </div>
     </>

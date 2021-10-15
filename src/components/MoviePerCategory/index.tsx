@@ -26,20 +26,6 @@ const MoviePerCategory = () => {
     });
   }, []);
 
-  const naoExiste: number[] = [];
-
-  genre?.genres.forEach(x => {
-    let achou = false
-    page.results?.forEach(y => {
-      if(x.id === y.id){
-        achou = true
-      }
-    })
-    if(!achou){
-      naoExiste.push(x.id)
-    }
-  })
-
   return (
     <>
       <div className="bg-primary">

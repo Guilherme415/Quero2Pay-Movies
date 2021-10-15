@@ -6,9 +6,10 @@ import { BASE_URL, GET_GENRES, IMG_URL } from "utils/requests";
 
 type props = {
   id: number;
+  activePage: number;
 };
 
-const MovieComponent = ({ id }: props) => {
+const MovieComponent = ({ id, activePage }: props) => {
   const [page, setPage] = useState<MoviePage>({
     page: 1,
     dates: "",
@@ -18,10 +19,10 @@ const MovieComponent = ({ id }: props) => {
   const [genre, setGenre] = useState<Genre>();
 
   useEffect(() => {
-    axios.get(`${BASE_URL}`).then((response) => {
+    axios.get(`${BASE_URL}&page=${activePage}`).then((response) => {
       setPage(response.data);
     });
-  }, []);
+  }, [activePage]);
 
   useEffect(() => {
     axios.get(GET_GENRES).then((response) => {
@@ -30,7 +31,9 @@ const MovieComponent = ({ id }: props) => {
     });
   }, []);
 
-  console.log(page)
+  console.log(id, activePage)
+  console.log(`${BASE_URL}&page=${activePage}`)
+  console.log(page);
 
   return (
     <>
@@ -39,7 +42,7 @@ const MovieComponent = ({ id }: props) => {
           ?.filter((item) => item.id === id)
           .map((item) => (
             <div key={item.id} className="d-flex flex-wrap">
-              <div className="flex-column justify-content-start flex-wrap w-30">
+              <div className="flex-column justify-content-start flex-wrap w-25">
                 <div>
                   <img src={`${IMG_URL}${item.poster_path}`} alt="" />
                 </div>
@@ -69,7 +72,7 @@ const MovieComponent = ({ id }: props) => {
                 <p>{item.overview}</p>
                 <p></p>
                 <p></p>
-                <IFrame id={item.id} />
+                <IFrame id={item.id} language={item.original_language}/>
               </div>
             </div>
           ))}

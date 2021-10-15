@@ -40,15 +40,7 @@ const Carousel = () => {
   const changeSearch = (search: SearchValue) => {
     setSearchValue(search);
   };
-
-  // const handleScroll = () => {
-  //     if(window.innerWidth + document.documentElement.scrollWidth < document.documentElement.offsetWidth
-  //         && page.page === page.total_page){
-  //         return;
-  //     }else{
-  //         setActivePage(page.page += 1);
-  //     }
-  // }
+  console.log(page.page)
 
   return (
     <>
@@ -67,13 +59,13 @@ const Carousel = () => {
                   className="m-3"
                 >
                   <div className="flex-column">
-                    <Link to={`/movies/${movie.id}`}>
+                    <Link to={`/movies/${page.page}/${movie.id}`}>
                       <div className="image-container">
                         <img src={`${IMG_URL}${movie.poster_path}`} alt="" />
                       </div>
                       <h4 className="text-primary">{movie.title}</h4>
                     </Link>
-                    <h5 className="text-secundary">Release date:</h5>
+                    <h5 className="text-secundary">Data de lançamento:</h5>
                     <h4>{movie.release_date}</h4>
                   </div>
                 </div>
