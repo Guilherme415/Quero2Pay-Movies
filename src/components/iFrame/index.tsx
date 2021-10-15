@@ -31,12 +31,14 @@ const IFrame = ({ id, language }: props) => {
       });
   }, [id]);
 
-  console.log('Movie = ' , moviePt?.results)
+  console.log('MoviePt = ' , moviePt?.results)
+  console.log('Movie = ' , movie?.results, movie?.results?.length)
 
   return (
     <>
       <div>
         {moviePt?.results === undefined || moviePt?.results.length < 1 ? 
+          movie?.results === undefined || movie?.results.length > 1 ? 
           <iframe
           width="100%"
           height="399px"
@@ -46,6 +48,7 @@ const IFrame = ({ id, language }: props) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>  
+          : null
         :
           <iframe
             width="100%"
